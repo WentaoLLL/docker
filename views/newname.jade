@@ -1,0 +1,21 @@
+extends layout
+
+block content
+
+    h1= title
+    form#formAddUser(name="adduser",method="post",action="/adduser")
+        input#inputUserIdnummer(type="text", placeholder="idNummer", name="idNummer")
+        input#inputUserName(type="text", placeholder="username", name="username")
+        input#inputUserNachname(type="text", placeholder="usernachname", name="usernachname")
+        input#inputUserEmail(type="text", placeholder="useremail", name="useremail")
+        button#btnSubmit(type="submit") submit
+
+    h2= "Remove a Name"
+    form#formRemoveUser(name="removeuser",method="post",action="/removeuser")
+        input#inputUserIdnummer(type="text", placeholder="idNummer", name="idNummer")
+        button#btnSubmit(type="submit") remove
+
+
+
+
+

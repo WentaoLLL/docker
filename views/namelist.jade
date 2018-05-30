@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    h1.
+        Name List
+    ul
+        each name, i in namelist
+            li
+                a= name.idNummer
+                a= " "
+                a= name.username  
+                a= " "
+                a= name.usernachname
+                a= " "
+                a(href="mailto:#{name.email}")= name.email          
+                
