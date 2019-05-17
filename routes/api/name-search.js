@@ -42,8 +42,8 @@ router.post('/searchperson', function(req, res) {
             // If it worked, set the header so the address bar doesn't still say /adduser
             //res.location("userlist");
             // And forward to success page
-	    res.render('searchlist', {
-            "searchlist" : doc
+	    res.render('searchresult', {
+            "searchresult" : doc
         });
             res.redirect("searchresult");
         }
