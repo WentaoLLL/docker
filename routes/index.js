@@ -64,6 +64,39 @@ router.post('/adduser', function(req, res) {
     });
 });
 
+
+/* POST to Search User Service */
+router.post('/searchperson', function(req, res) {
+
+    // Set our internal DB variable
+    var db = req.db;
+
+    // Get our form values. These rely on the "name" attributes
+    var userName = req.body.username;
+    var userNachname = req.body.usernachname;
+	
+    // Set our collection
+    var collection = db.get('newcollection');
+
+    // Submit to the DB
+    collection.find({
+        "username" : userName;
+        "usernachname" : userNachname
+    }, function (err, doc) {
+        if (err) {
+            // If it failed, return error
+            res.send("There was a problem adding the information to the database.");
+        }
+        else {
+            // If it worked, set the header so the address bar doesn't still say /adduser
+            //res.location("userlist");
+            // And forward to success page
+            res.redirect("searchresult");
+        }
+    });
+});
+
+
 router.post('/removeuser', function(req, res) {
 
     // Set our internal DB variable
