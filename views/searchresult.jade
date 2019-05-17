@@ -1,1 +1,17 @@
+extends layout
 
+block content
+    h1.
+        Search List
+    ul
+        each name, i in searchlist
+            li
+                a= name.idNummer
+                a= " "
+                a= name.username  
+                a= " "
+                a= name.usernachname
+                a= " "
+                a(href="mailto:#{name.email}")= name.email      
+                a= " "
+                a= name.userraum
