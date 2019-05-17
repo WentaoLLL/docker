@@ -91,13 +91,11 @@ router.post('/searchperson', function(req, res) {
             // If it worked, set the header so the address bar doesn't still say /adduser
             //res.location("userlist");
             // And forward to success page
+	    res.render('searchlist', {
+            "searchlist" : doc
+        });
             res.redirect("searchresult");
         }
-	const jade = require('jade');
-
-        var str = jade.renderFile('./views/searchresult.jade',{pretty:true,doc});
-
-        console.log(str);
     });
 });
 
