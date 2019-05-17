@@ -80,7 +80,7 @@ router.post('/searchperson', function(req, res) {
 
     // Submit to the DB
     collection.findOne({
-        "username" : userName;
+        "username" : userName,
         "usernachname" : userNachname
     }, function (err, doc) {
         if (err) {
