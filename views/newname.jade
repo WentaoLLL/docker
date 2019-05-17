@@ -9,14 +9,17 @@ block content
         input#inputUserNachname(type="text", placeholder="usernachname", name="usernachname")
         input#inputUserEmail(type="text", placeholder="useremail", name="useremail")
         input#inputUserRaum(type="text", placeholder="userraum", name="userraum")
-        button#btnSubmit(type="submit") submit
+        button#btnSubmit(type="submit") Submit
 
-    h2= "Remove a Name"
+    h2= "Remove a Person"
     form#formRemoveUser(name="removeuser",method="post",action="/removeuser")
         input#inputUserIdnummer(type="text", placeholder="idNummer", name="idNummer")
-        button#btnSubmit(type="submit") remove
-
-
-
+        button#btnSubmit(type="submit") Remove
+    
+    h3= "Search a Person"
+    form#formSearchUser(name="searchuser",method="post",action="/searchuser")
+    input#inputUserName(type="text", placeholder="username", name="username")
+    input#inputUserNachname(type="text", placeholder="usernachname", name="usernachname")
+    button#btnSubmit(type="submit") Search
 
 
