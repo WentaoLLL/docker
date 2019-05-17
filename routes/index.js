@@ -38,7 +38,8 @@ router.post('/adduser', function(req, res) {
     var userName = req.body.username;
     var userNachname = req.body.usernachname;
     var userEmail = req.body.useremail;
-
+    var userRaum = req.body.userraum;
+	
     // Set our collection
     var collection = db.get('newcollection');
 
@@ -47,7 +48,8 @@ router.post('/adduser', function(req, res) {
    	"idNummer" : idNummer,
         "username" : userName,
         "usernachname" : userNachname,
-        "email" : userEmail
+        "email" : userEmail,
+	"raum" : userRaum
     }, function (err, doc) {
         if (err) {
             // If it failed, return error
