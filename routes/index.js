@@ -79,7 +79,7 @@ router.post('/searchperson', function(req, res) {
     var collection = db.get('newcollection');
 
     // Submit to the DB
-    collection.find({
+    collection.findOne({
         "username" : userName;
         "usernachname" : userNachname
     }, function (err, doc) {
@@ -93,6 +93,11 @@ router.post('/searchperson', function(req, res) {
             // And forward to success page
             res.redirect("searchresult");
         }
+	const jade = require('jade');
+
+        var str = jade.renderFile('./views/searchresult.jade',{pretty:true,doc});
+
+        console.log(str);
     });
 });
 
