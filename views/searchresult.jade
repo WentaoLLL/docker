@@ -4,14 +4,14 @@ block content
     h1.
         Search List
     ul
-        each name, i in searchlist
+        each doc, i in searchlist
             li
-                a= name.idNummer
+                a= doc.idNummer
                 a= " "
-                a= name.username  
+                a= doc.username  
                 a= " "
-                a= name.usernachname
+                a= doc.usernachname
                 a= " "
-                a(href="mailto:#{name.email}")= name.email      
+                a(href="mailto:#{doc.email}")= doc.email      
                 a= " "
-                a= name.userraum
+                a= doc.userraum
