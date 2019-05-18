@@ -6,12 +6,12 @@ block content
     ul
         each doc, i in searchresult
             li
-                a= doc.name.idNummer
+                a= doc.idNummer
                 a= " "
-                a= doc.name.username  
+                a= doc.username  
                 a= " "
-                a= doc.name.usernachname
+                a= doc.usernachname
                 a= " "
-                a(href="mailto:#{doc.name.email}")= doc.name.email      
+                a(href="mailto:#{doc.email}")= doc.email      
                 a= " "
-                a= doc.name.userraum
+                a= doc.userraum
