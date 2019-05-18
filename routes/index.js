@@ -92,7 +92,7 @@ router.post('/searchperson', function(req, res) {
             //res.location("userlist");
             // And forward to success page
 	    res.render('searchresult', {
-            "searchresult" : doc
+            "namelist" : doc
         });
             res.redirect("searchresult");
         }
