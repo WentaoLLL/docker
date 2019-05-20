@@ -30,7 +30,7 @@ router.post('/searchperson', function(req, res) {
     var collection = db.get('newcollection');
 
     // Submit to the DB
-    collection.findOne({
+    collection.find({
         "username" : userName,
         "usernachname" : userNachname
     }, function (err, doc) {
@@ -43,8 +43,9 @@ router.post('/searchperson', function(req, res) {
             //res.location("userlist");
             // And forward to success page
 	    res.render('searchresult', {
-            "searchresult" : doc
+            "searchlist" : JSON.stringify(doc),
         });
+            //res.send(doc);
             res.redirect("searchresult");
         }
     });
