@@ -3,15 +3,18 @@ extends layout
 block content
     h1.
         Search List
+
+    var personArray =  !{searchlist} ;
+     
+//    var id =personArray.idNummer;
+ //   var Name =personArray.userName;
+ //   var Nachname = personArray.userNachname;
+ //   var Email =personArray.userEmail;
+ //   var Raum =personArray.userRaum;
+    //var personArray =  !{searchlist} ;
     ul
-        each doc, i in searchresult
+        each item,i in personArray
             li
-                a= doc.idNummer
-                a= " "
-                a= doc.username  
-                a= " "
-                a= doc.usernachname
-                a= " "
-                a(href="mailto:#{doc.email}")= doc.email      
-                a= " "
-                a= doc.userraum
+                a = item.username
+                a = item.usernachname
+                a = item.userraum
